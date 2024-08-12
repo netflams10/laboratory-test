@@ -4,17 +4,17 @@ Health Update
 Setting Up
 Clone Repo:
 
-    git clone git@github.com:netflams10/interview-test.git.
-    cd interview-test
-    cp .env.example .env
-    setup your database credentials
+    git clone git@github.com:netflams10/laboratory-test.git
+    cd laboratory-test
 
 Docker Setup
 
     docker-compose up -d
     docker compose exec php bash
-    composer install
-    php artisan migrate --seed
+        composer install
+        php artisan migrate --seed
+        php artisan tinker
+            -> User::latest()->first() // choose any user to get token
 
 ------------------------------------------------------------------------------------------------
 

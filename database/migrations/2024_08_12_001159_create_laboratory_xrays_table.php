@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('laboratory_xrays', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('laboratory_id');
+            $table->unsignedBigInteger('xray_id');
             $table->timestamps();
+
+            $table->foreign('laboratory_id')->references('id')->on('laboratories')->cascade();
         });
     }
 
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('laboratory_xrays');
     }
 };

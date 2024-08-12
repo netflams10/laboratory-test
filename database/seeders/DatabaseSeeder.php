@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             MRScanSeed::class,
             XraySeed::class,
             UltraSoundScanSeed::class,
-            UserSeed::class
+            UserSeed::class,
+            PatientSeeder::class,
         ]);
     }
 }
